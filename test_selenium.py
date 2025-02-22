@@ -1,15 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium import webdriver # Драйвер дб добавлен в PATH!!!
 import time
 
-# Указываем путь к chromedriver.exe
-driver_path = r"C:\Users\rodio\OneDrive\Рабочий стол\Python\chromedriver.exe"
-
-# Создаем объект Service для указания пути к chromedriver
-service = Service(executable_path=driver_path)
-
-# Инициализируем драйвер Chrome с использованием объекта Service
-driver = webdriver.Chrome(service=service)
+# Инициализируем драйвер Chrome
+driver = webdriver.Chrome()
 
 # Открытие веб-страницы
 driver.get("https://www.ya.ru")
