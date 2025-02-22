@@ -1,15 +1,15 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 import time
 
-# Укажите путь к исполняемому файлу Chrome для тестирования
-chrome_binary_path = r"C:\Users\rodio\OneDrive\Рабочий стол\Системная\chrome-win64\chrome.exe"
+# Указываем путь к chromedriver.exe
+driver_path = r"C:\Users\rodio\OneDrive\Рабочий стол\Python\chromedriver.exe"
 
-# Создайте объект ChromeOptions и укажите путь к исполняемому файлу
-options = webdriver.ChromeOptions()
-options.binary_location = chrome_binary_path
+# Создаем объект Service для указания пути к chromedriver
+service = Service(executable_path=driver_path)
 
-# Инициализируйте драйвер Chrome с использованием ChromeOptions
-driver = webdriver.Chrome(options=options)
+# Инициализируем драйвер Chrome с использованием объекта Service
+driver = webdriver.Chrome(service=service)
 
 # Открытие веб-страницы
 driver.get("https://www.ya.ru")
